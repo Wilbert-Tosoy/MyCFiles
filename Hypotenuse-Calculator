@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+
+void hypotenuseCalculator()
+{
+    float opposite, adjacent;
+    printf("Enter the value of the opposite: ");
+    scanf("%f", &opposite);
+    printf("Enter the value of the adjacent: ");
+    scanf("%f", &adjacent);
+
+    float hypotenuse = pow(opposite, 2) + pow(adjacent, 2);
+    printf("The value of hypotenuse: %.2f", hypotenuse);
+}
+
+int main(void)
+{
+    hypotenuseCalculator();
+    return 0;
+}
