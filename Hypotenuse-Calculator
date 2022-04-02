@@ -3,14 +3,16 @@
 
 void hypotenuseCalculator()
 {
-    float opposite, adjacent;
-    printf("Enter the value of the opposite: ");
-    scanf("%f", &opposite);
-    printf("Enter the value of the adjacent: ");
-    scanf("%f", &adjacent);
+    double opposite, adjacent;
 
-    float hypotenuse = pow(opposite, 2) + pow(adjacent, 2);
-    printf("The value of hypotenuse: %.2f", hypotenuse);
+    printf("Enter the value of the opposite: ");
+    scanf("%lf", &opposite);
+    printf("Enter the value of the adjacent: ");
+    scanf("%lf", &adjacent);
+
+    double hypotenuse = sqrt(pow(opposite, 2) + pow(adjacent, 2));
+
+    printf("The value of hypotenuse: %lf", hypotenuse);
 }
 
 int main(void)
