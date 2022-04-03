@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <math.h>
+
+int triangleTypeIdentifier()
+{
+    int answer;
+    printf("1. Sides 2. Angles?\n");
+    do
+    {
+        printf("Enter the number: ");
+        scanf("%d", &answer);
+        if (answer == 1)
+        {
+            break;
+        }
+        if (answer == 2)
+        {
+            break;
+        }
+    } while (answer != 1 || answer != 2);
+    return answer;
+}
+
+void bySide(int answer)
+{
+    int opposite, adjacent, hypotenuse;
+    printf("Enter the value of opposite: ");
+    scanf("%d", &opposite);
+    printf("Enter the value of adjacent: ");
+    scanf("%d", &adjacent);
+    printf("Enter the value of hypotenuse: ");
+    scanf("%d", &hypotenuse);
+
+    if (opposite == adjacent && hypotenuse == adjacent)
+    {
+        printf("The triangle is Equilateral!");
+    }
+    else if (opposite == adjacent || hypotenuse == adjacent || opposite == hypotenuse)
+    {
+        printf("The triangle is Isosceles!");
+    }
+    else
+    {
+        printf("The triangle is Scalene!");
+    }
+}
+
+int main(void)
+{
+    int answerHolder = triangleTypeIdentifier();
+    if (answerHolder == 1)
+    {
+        bySide(answerHolder);
+    }
+
+    return 0;
+}
