@@ -3,6 +3,7 @@
 
 int triangleTypeIdentifier()
 {
+    printf("Directions: Please type the corresponding number.\n");
     int answer;
     printf("1. Sides 2. Angles?\n");
     do
@@ -45,13 +46,34 @@ void bySide(int answer)
     }
 }
 
+void byAngle(int answer)
+{
+    int firstAngle, secondAngle, thirdAngle;
+    printf("Enter the value of the first angle: ");
+    scanf("%d", &firstAngle);
+    printf("Enter the value of secondAngle: ");
+    scanf("%d", &secondAngle);
+    printf("Enter the value of thirdAngle: ");
+    scanf("%d", &thirdAngle);
+
+    if (firstAngle < 90 && secondAngle < 90 && thirdAngle < 90)
+    {
+        printf("The triangle is Acute!");
+    }
+    else if (firstAngle > 90 || secondAngle > 90 || thirdAngle > 90)
+    {
+        printf("The triangle is Obtuse!");
+    }
+    else if (firstAngle == 90 && secondAngle == 90 && thirdAngle == 90)
+    {
+        printf("The triangle is Right Angle!");
+    }
+}
+
 int main(void)
 {
     int answerHolder = triangleTypeIdentifier();
-    if (answerHolder == 1)
-    {
-        bySide(answerHolder);
-    }
+    (answerHolder == 1) ? bySide(answerHolder) : byAngle(answerHolder);
 
     return 0;
 }
