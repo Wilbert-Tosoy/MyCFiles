@@ -4,17 +4,14 @@ int triangleTypeIdentifier()
 {
     printf("Directions: Please type the corresponding number.\n");
     int answer;
-    printf("1. Sides 2. Angles?\n");
-    do
-    {
+    printf("1. Sides 2. Angles\n");
+    do {
         printf("Enter the number: ");
         scanf("%d", &answer);
-        if (answer == 1)
-        {
+        if (answer == 1) {
             break;
         }
-        if (answer == 2)
-        {
+        if (answer == 2) {
             break;
         }
     } while (answer != 1 || answer != 2);
@@ -31,16 +28,11 @@ void bySide(int answer)
     printf("Enter the value of hypotenuse: ");
     scanf("%d", &hypotenuse);
 
-    if (opposite == adjacent && hypotenuse == adjacent)
-    {
+    if (opposite == adjacent && hypotenuse == adjacent) {
         printf("The triangle is Equilateral!");
-    }
-    else if (opposite == adjacent || hypotenuse == adjacent || opposite == hypotenuse)
-    {
+    } else if (opposite == adjacent || hypotenuse == adjacent || opposite == hypotenuse) {
         printf("The triangle is Isosceles!");
-    }
-    else
-    {
+    } else {
         printf("The triangle is Scalene!");
     }
 }
@@ -50,44 +42,29 @@ void byAngle(int answer)
     int angle[3];
     int acute = 0, obtuse = 0, right = 0;
     int i = 0;
-    for (i; i < 3; i++)
-    {
-        do
-        {
+    for (i; i < 3; i++) {
+        do {
             printf("Enter the value of angle %d: ", i + 1);
             scanf("%d", &angle[i]);
-            if (angle[i] <= 0 || angle[i] > 360)
-            {
+            if (angle[i] <= 0 || angle[i] > 360) {
                 printf("Are you an idiot?\n");
-            }
-            else
-            {
-                if (angle[i] < 90)
-                {
+            } else {
+                if (angle[i] < 90) {
                     acute++;
-                }
-                else if (angle[i] > 90)
-                {
+                } else if (angle[i] > 90) {
                     obtuse++;
-                }
-                else if (angle[i] == 90)
-                {
+                } else if (angle[i] == 90) {
                     right++;
                 }
             }
         } while (angle[i] <= 0 || angle[i] > 360);
     }
 
-    if (acute == 3)
-    {
+    if (acute == 3) {
         printf("The triangle is Acute!");
-    }
-    else if (obtuse > 0)
-    {
+    } else if (obtuse > 0) {
         printf("The triangle is Obtuse!");
-    }
-    else if (right == 3)
-    {
+    } else if (right == 3) {
         printf("The triangle is Right Angle!");
     }
 }
