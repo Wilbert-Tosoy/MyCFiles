@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main(void)
+{
+    float n, answer;
+    printf("Enter how many number of sides: ");
+    scanf("%f", &n);
+    answer = (n * (n - 3)) / 2;
+    printf("%.0f", answer);
+}
