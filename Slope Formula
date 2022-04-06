@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+void SlopeFormula() {
+    float m, x1, x2, y1, y2, yanswer, xanswer;
+    printf("Enter the value of x1: ");
+    scanf("%f", &x1);
+    printf("Enter the value of x2: ");
+    scanf("%f", &x2);
+    printf("Enter the value of y1: ");
+    scanf("%f", &y1);
+    printf("Enter the value of y2: ");
+    scanf("%f", &y2);
+    yanswer = y2 - y1;
+    xanswer = x2 - x1;
+    m = yanswer / xanswer;
+    printf("m = %f", m);
+}
+
+int main() {
+    SlopeFormula();
+    return 0;
+}
