@@ -1,17 +1,25 @@
 #include <stdio.h>
 
 void SlopeFormula() {
-    float m, x1, x2, y1, y2, yanswer, xanswer;
-    printf("Enter the value of x1: ");
-    scanf("%f", &x1);
-    printf("Enter the value of x2: ");
-    scanf("%f", &x2);
-    printf("Enter the value of y1: ");
-    scanf("%f", &y1);
-    printf("Enter the value of y2: ");
-    scanf("%f", &y2);
-    yanswer = y2 - y1;
-    xanswer = x2 - x1;
+    float m, yanswer, xanswer;
+    float x[2];
+    float y[2];
+    int i = 0;
+    int j = 0;
+
+    for (i; i < 2; i++) {
+        printf("Enter the value of x%d: ", i + 1);
+        scanf("%f", &x[i]);
+        if (i == 1) {
+            for (j; j < 2; j++) {
+            printf("Enter the value of y%d: ", j + 1);
+            scanf("%f", &y[j]);  
+            }
+        }
+    }
+
+    xanswer = x[1] - x[0];
+    yanswer = y[1] - y[0];
     m = yanswer / xanswer;
     printf("m = %f", m);
 }
