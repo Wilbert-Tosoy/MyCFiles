@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <math.h>
+
+const double PI = 3.141592653589793;
+
+void Circumference() {
+    double diameter, circumference;
+    printf("Enter the value of diameter: ");
+    scanf("%lf", &diameter);
+    circumference = PI * diameter;
+    printf("Approximately %lf\n", circumference);
+}
+
+void AreaOfCircle() {
+    double radius, area;
+    printf("Enter the value of radius: ");
+    scanf("%lf", &radius);
+    area = PI * pow(radius, 2);
+    printf("Approximately %lf", area);
+}
+
+void ArcLength(double radius, double degreeMeasurement) {
+    double length;
+    length = (degreeMeasurement / 360) * (2 * PI * radius);
+    printf("The Arc Length: %.2lf units\n", length);
+}
+
+double AreaOfSector(double radius, double degreeMeasurement) {
+    double areaOfSector;
+    areaOfSector = (degreeMeasurement / 360) * (PI * pow(radius, 2));
+    printf("The Area of Sector: %.2lf units^2\n", areaOfSector);
+    return areaOfSector;
+}
+
+double AreaOfEquilateralTriangle(double radius) {
+    double areaOfEquilateralTriangle;
+    areaOfEquilateralTriangle = (sqrt(3) / 4) * pow(radius, 2);
+    return areaOfEquilateralTriangle;
+}
+
+void CircleSegment(double AreaOfSector, double AreaOfEquilateralTriangle) {
+    double areaOfCircleSegment = AreaOfSector - AreaOfEquilateralTriangle;
+    printf("The Area of Circle Segment: %.2lf", areaOfCircleSegment);
+
+}
+
+int main() {
+    double radius, degreeMeasurement;
+    printf("Enter the value of radius: ");
+    scanf("%lf", &radius);
+    printf("Enter the degree measure: ");
+    scanf("%lf", &degreeMeasurement);
+
+    ArcLength(radius, degreeMeasurement);
+    double areaOfSector = AreaOfSector(radius, degreeMeasurement);
+    double areaOfEquilateralTriangle = AreaOfEquilateralTriangle(radius);
+    CircleSegment(areaOfSector, areaOfEquilateralTriangle);
+
+    return 0;
+}
