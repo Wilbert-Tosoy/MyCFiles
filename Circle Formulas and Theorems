@@ -3,20 +3,16 @@
 
 const double PI = 3.141592653589793;
 
-void Circumference() {
-    double diameter, circumference;
-    printf("Enter the value of diameter: ");
-    scanf("%lf", &diameter);
-    circumference = PI * diameter;
-    printf("Approximately %lf\n", circumference);
+void Circumference(double radius) {
+    double circumference;
+    circumference = PI * radius;
+    printf("The Circumference: %lf\n", circumference);
 }
 
-void AreaOfCircle() {
-    double radius, area;
-    printf("Enter the value of radius: ");
-    scanf("%lf", &radius);
+void AreaOfCircle(double radius) {
+    double area;
     area = PI * pow(radius, 2);
-    printf("Approximately %lf", area);
+    printf("The Area Of Circle: %lf\n", area);
 }
 
 void ArcLength(double radius, double degreeMeasurement) {
@@ -51,6 +47,8 @@ int main() {
     printf("Enter the degree measure: ");
     scanf("%lf", &degreeMeasurement);
 
+    Circumference(radius);
+    AreaOfCircle(radius);
     ArcLength(radius, degreeMeasurement);
     double areaOfSector = AreaOfSector(radius, degreeMeasurement);
     double areaOfEquilateralTriangle = AreaOfEquilateralTriangle(radius);
