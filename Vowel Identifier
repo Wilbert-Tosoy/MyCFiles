@@ -1,0 +1,40 @@
+/*
+    Nagsulat: Wilbert R. Tosoy
+    Dahilan: Para alamin kung patinig o hindi ang isang letra.
+    Petsa: Abril 15, 2022
+*/
+
+#include <stdio.h>
+
+int main() {
+    char letter;
+    printf("Enter a letter: ");
+    scanf("%c", &letter);
+    switch (letter) {
+        case 'A':
+        case 'a':
+            printf("%c is a vowel", letter);
+            break;
+        case 'E':
+        case 'e':
+            printf("%c is a vowel", letter);
+            break;
+        case 'I':
+        case 'i':
+            printf("%c is a vowel", letter);
+            break;
+        case 'O':
+        case 'o':
+            printf("%c is a vowel", letter);
+            break;
+        case 'U':
+        case 'u':
+            printf("%c is a vowel", letter);
+            break;
+        default:
+            printf("%c is not a vowel", letter);
+    }
+
+    return 0;
+}
+
