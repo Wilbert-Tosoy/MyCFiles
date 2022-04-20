@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int iCounter(int decimal) {
+    int i = 0;
+    while (decimal != 0) {
+        decimal = decimal / 8;
+        if (decimal % 8 == 0) {
+            i = i;
+        } else {
+            i++;
+        }
+    }
+    return i;
+}
+
+void equalToEight(int number) {
+    number = number / 8;
+    printf("Octal: %d0", number);
+}
+
+void notEqualtoEight(int number) {
+    int remainder;
+    int i = iCounter(number);
+    int j = i;
+    int answer[i];
+
+    while (number > 0) {
+        remainder = number % 8;
+        answer[i] = remainder;
+        i--;
+        number = number / 8;
+    }
+    printf("Octal: ");
+    for (j; j != i; j--) {
+        printf("%d", answer[j]);
+    }
+}
+
+int main() {
+    int decimal;
+
+    printf("Enter a Decimal: ");
+    scanf("%d", &decimal);
+
+    (decimal % 8 == 0) ? equalToEight(decimal) : notEqualtoEight(decimal);
+
+    return 0;
+}
